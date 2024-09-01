@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.part1{        
+    background-color: #6c757d;
+    padding-bottom: 60px;
+    color: white;
+}
+.part1 h1{
+    color:#f8c471;
+}
+.container1 h1{
+   text-align: center;
+   color:#f8c471;
+   padding: 40px 0;
+}
+.about-ferti{   /*styling background margin */
+    margin:20px 50px;
+    line-height: 35px;
+    word-spacing: 0.3rem;
+    color: #eee;
+
+}
+.about-sih h3{
+    margin: 5px;
+    color:#00000099;
+}
+.id,.statement,.solu{
+    display: flex;
+    flex-direction: row;
+    margin: 25px 50px;
+    color:#eee;
+}
+.id h4,.statement h4,.solu h4{
+    font-size: 1.25rem;
+    color:#00000099;
+}
+.part2 h2{
+    text-align: center;
+    /* background-color: #bd897e; */
+    color: #354f52;
+    padding: 10px;
+}
+.part2{     /*setting background for lower part*/
+    background-color: #e1e5f2;
+}
+.row1{
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    margin: 40px 170px;
+}
+.card{
+    border: 3rem solid black;
+}
+.card-body{
+    background-color: #d9d9d9;
+}
+.about-ferti .btn{  /*read more btn*/
+    font-size: 1.25rem;
+    width: 10rem;
+    padding: 5px;
+    height: 3rem;
+    border-radius: 3rem;
+    background-color: #d9d9d9;
+}
+.about-ferti .btn:hover{  /*hover effect on read more btn*/
+    border: 1px solid #00000099;
+}
+.about-ferti h2{    /*heading  team member*/
+    color:#00000099;
+}

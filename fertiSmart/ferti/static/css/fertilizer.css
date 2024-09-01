@@ -1,0 +1,231 @@
+ /* ABHISHEK PATHAK  */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  overflow-x: hidden;
+   background-color: #E3F2E1; 
+}
+
+/* navigation bar code */
+header {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    height: 100px;
+    z-index: 1000;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  header span {
+    color: #f80046;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    list-style: none;
+    margin: 0px 12px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+  }
+  nav ul li a:hover{
+    color: rgb(0, 0, 255);
+    border-bottom: 2px solid rgb(0, 0, 255);
+  }
+  /* navigation icons code */
+  .function_line {
+    display: none;
+  } 
+  
+  .left {
+    font-size: 1.7rem;
+    margin-left: 2rem;
+    color: white;
+  }
+
+.fertilizer_prediction{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.fertilizer_card{
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border: none;
+    margin: 10px 2px;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px  #2c3e50;
+    animation: blink 5s linear ;
+}
+
+@keyframes blink{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.fertilizer_img{
+    width: 40%;
+    height: 40%;
+    border-radius: 8px; 
+    margin-right: 14px;
+}
+.fertilizer_details{
+    /* width: 50%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+     margin-top: 15px;
+}
+
+#fertilizer_name {
+    font-weight: bold;
+    color: #007BFF;
+}
+#fertilizer-amount{
+    font-weight: bold;
+    color: #28A745;
+}
+#fertilizer-type{
+    color: grey;
+}
+#soil-condition{
+    color: grey;
+}
+#crop-type{
+    color: grey;
+}
+
+/* footer part */
+footer {
+    width: 100%;
+    margin-top: auto;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* responsive code */
+@media screen and (max-width: 786px)  {
+
+    /* nav bar */
+    header {
+        background-color: rgba(0, 0, 0, 0.555);   
+         z-index: 1000; 
+    }
+     /* navigation icon */
+    .function_line {
+      display: block;
+      margin-right: 29px;
+      margin-top: 15px;
+      font-size: xx-large;
+    }
+   
+    .left {
+      color: white;
+      margin-top: 1rem;
+    }
+   
+    #icon_2 {
+      display: none;
+    }
+   
+    nav {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 55px;
+    background-color: rgba(0, 0, 0, 0.555);  
+      transform: translateY(-139%);
+      transition: all 0.2s linear;
+    }
+   
+    nav ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+   
+    nav ul li {
+      margin: 15px 1px;
+      font-size: large;
+    }
+   nav ul li a{
+       color: blueviolet;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.7); 
+      color: white;
+      border-radius: 4px;
+   }
+   nav ul li a:hover{
+    color: white;
+    border-bottom: none;
+  }
+     /* handling navigation icons through javascript */
+    .active nav {
+      transform: translateY(0%);
+    }
+   
+    .active #icon_2 {
+      display: block;
+    }
+   
+    .active #icon_1 {
+      display: none;
+    }
+
+  /* main content */
+  .fertilizer_card{
+    flex-direction: column;
+    width: 88%;
+  }
+  .fertilizer_img{
+    width: 70%;
+    height: 70%;
+    margin: auto;
+  }
+}   

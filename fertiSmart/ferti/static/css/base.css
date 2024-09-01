@@ -1,0 +1,232 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+
+:root{
+  --col-primary:#16b566;
+  --col-white:#f3f2f2;
+  --col-black:#212120;
+}
+
+
+/* Navbar Css */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--col-primary);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--col-black);
+  z-index: +5;
+}
+
+.title > a , h1{
+  font-size: 2rem;
+  font-family: "Inter", sans-serif;
+  color: var(--col-white);
+  text-decoration: none;
+}
+
+.header-right {
+    margin: auto 10px auto auto;
+}
+
+.header-right > a {
+  display: inline-block;
+  color: var(--col-white);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-inline: 1rem;
+  text-decoration: none;
+}
+
+.icon {
+    position: absolute;
+    display: none;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: var(--col-white);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.line {
+    display: block;
+    margin-block: 6px;
+    height: 3px;
+    width: 28px;
+    border-radius: 5rem;
+    background-color: #ffffff;
+    transition: all 0.2s ease-in;
+}
+
+.text {
+    position: relative;
+    padding: 8px;
+    transition: 0.2s;
+}
+  
+.text::after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    right: 0;
+    position: absolute;
+    background: var(--col-white);
+    transition: width 0.2s ease 0s, left 0.2s ease 0s;
+    width: 0;
+}
+  
+.text:hover::after {
+  width: 100%;
+}
+
+
+/* Footer Css */
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0)),url(../assets/image.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo-img {
+  max-width: 250px;
+}
+
+.footer-links {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 20px;
+  border: 1px solid var(--col-primary);
+  border-radius: 8px;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  color: var(--col-white);
+  border-bottom: 2px solid var(--col-white);
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 8px;
+}
+
+.footer-column a {
+  color: var(--col-white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-column a:hover {
+  color: #f31d41;
+  text-decoration: underline;
+  transform: translate(3px, 0);
+}
+
+.footer-info {
+  color: yellow;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+
+@media screen and (max-width: 786px) {
+    .header {
+      display: block;
+      z-index: +10;
+    }
+  
+    .header-right {
+      width: 100%;
+      height: 0;
+      display: block;
+      position: relative;
+      transition: all 0.2s cubic-bezier(0.5, 0.82, 0.17, 1);
+    }
+  
+    .header-right a {
+      display: none;
+      text-align: center;
+      margin-block: 10px;
+    }
+  
+    .icon {
+      display: block;
+    }
+  
+    .active {
+      height: 244px;
+      transition: all 0.2s cubic-bezier(0.5, 0.82, 0.17, 1);
+      a{
+        display: block;
+      }
+    }
+  
+    .rotate {
+      background-color: red;
+      width: 26px;
+      transform-origin: top left;
+      transform: rotateZ(45deg);
+      transition: all 0.1s ease;
+    }
+  
+    .rotate-2 {
+      opacity: 0;
+      transition: all 0.1s ease-in;
+    }
+  
+    .rotate-3 {
+      background-color: red;
+      width: 26px;
+      transform-origin: bottom left;
+      transform: rotateZ(-45deg);
+      transition: all 0.1s ease;
+    }
+
+    .footer-links {
+      display: block;
+    }
+  }
+  .header a:hover{
+    color: #ffffff;
+     text-decoration: none;
+  }

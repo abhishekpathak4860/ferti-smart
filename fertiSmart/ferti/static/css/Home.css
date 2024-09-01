@@ -1,0 +1,73 @@
+/* Muklendra Pratap Rao */
+
+body{
+    background-image: url("/Images/field.jpg");
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+/* Styling for all cards */
+.container{
+    margin:90px 0px 0px 250px;
+    padding: 10px;
+    height: 450px;
+    width: 1050px;
+    display: flex;
+    justify-content: space-between;
+    background-color:  rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    box-shadow: 6px 6px 5px 5px white;
+   
+}
+
+/* For responsiveness */
+@media screen and (max-width: 786px) {
+    .container{          
+        flex-direction: column;
+        height: 90rem;
+        width: 20rem;
+        margin: 95px 0px 0px 20px;
+          }
+
+    .card{
+    margin-left: 30px;
+    margin-top: 20px;
+     }
+   
+  
+    body{
+    height: 120rem;
+   }
+
+}
+
+/* cards image styling */
+.card-img-top{
+    height: 240px;
+}
+
+/* All cards styling */
+.card{
+    margin: 8px;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+
+/* Cards hover effects */
+.card:hover{
+    height: 450px;
+    color: #0000009b;
+    box-shadow: 5px 5px 5px 5px rgb(0, 0, 0);
+    transition-timing-function: ease-in-out ;
+    transition-delay: 0s;
+
+}
+
+/* cards buttons styling */
+.btn {
+    height: 40px;
+    width: 105px;
+}
