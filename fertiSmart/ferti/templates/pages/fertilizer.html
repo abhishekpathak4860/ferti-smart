@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- Fertilizer Result Page created by Abhishek Pathak. -->
+<!-- This page provides the recommended fertilizer details based on soil and crop analysis. It displays the type of fertilizer, amount, soil condition, and crop type. -->
+
+{% block Link %}
+  <link rel="stylesheet" href="{% static 'css/fertilizer.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+{% endblock %}
+
+{% block content %}
+  <!-- main content -->
+  <main>
+    <div class="fertilizer_prediction" style="align-item:center;">
+      <!--Nitrogen Fertilizer-->
+      {% for fir in nitro %}
+      <div class="fertilizer_card">
+        <img src="{{fir.poster}}" alt="" class="fertilizer_img" style="width:35vh; height:40vh;">
+        <div class="fertilizer_details">
+          <h3>Recommended Fertilizer:<br> <span id="fertilizer_name">{{fir.name}}</span></h3>
+          <p>
+            Type: <span id="fertilizer-type">Nitrogen-based</span>
+          </p>
+          <p>
+            Amount: <span id="fertilizer-amount">{{RN}} kg/ha</span>
+          </p>
+          <p>
+            Soil Condition: <span id="soil-condition">Low Nitrogen</span>
+          </p>
+          <p>
+            Crop Type: <span id="crop-type">{{crop}}</span>
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+    </div>
+    <div class="fertilizer_prediction" style="align-item:center;">
+      <!--Phosphorous Fertilizer-->
+      {% for fi in phos %}
+      <div class="fertilizer_card">
+        <img src="{{fi.poster}}" alt="" class="fertilizer_img" style="width:35vh; height:40vh;">
+        <div class="fertilizer_details">
+          <h3>Recommended Fertilizer:<br> <span id="fertilizer_name">{{fi.name}}</span></h3>
+          <p>
+            Type: <span id="fertilizer-type">Phosphorous-based</span>
+          </p>
+          <p>
+            Amount: <span id="fertilizer-amount">{{RP}} kg/ha</span>
+          </p>
+          <p>
+            Soil Condition: <span id="soil-condition">Low Phosphorous</span>
+          </p>
+          <p>
+            Crop Type: <span id="crop-type">{{crop}}</span>
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+    </div>
+    <div  class="fertilizer_prediction" style="align-item:center;">
+      <!--Potasium Fertilizer Prediction-->
+      {% for fr in pot %}
+      <div class="fertilizer_card">
+        <img src="{{fr.poster}}" alt="" class="fertilizer_img" style="width:35vh; height:40vh;">
+        <div class="fertilizer_details">
+          <h3>Recommended Fertilizer:<br> <span id="fertilizer_name">{{fr.name}}</span></h3>
+          <p>
+            Type: <span id="fertilizer-type">Potasium-based</span>
+          </p>
+          <p>
+            Amount: <span id="fertilizer-amount">{{RK}} kg/ha</span>
+          </p>
+          <p>
+            Soil Condition: <span id="soil-condition">Low Potasium</span>
+          </p>
+          <p>
+            Crop Type: <span id="crop-type">{{crop}}</span>
+          </p>
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

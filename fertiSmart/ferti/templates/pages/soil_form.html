@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- Soil Analysis Report Page created by Abhishek Pathak. -->
+<!-- This page allows users to input various soil parameters and field details to generate a soil analysis report. The form collects information such as temperature, humidity, soil moisture, and nutrient levels, which are used to predict suitable fertilizer recommendations. -->
+
+{% block Link %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="{% static 'css/soil_form.css' %} ">
+{% endblock %}
+
+{% block content %}
+  <!-- Main Content -->
+  <section class="container">
+    <div class="form_content">
+      <h3>Soil Analysis Report</h3>
+      <form action="{% url 'fertilizer'%}" id="soil" method="POST">
+        {% csrf_token %}
+        <div class="form_data">
+          <div>
+            <label for="">Temperature(C):</label><br />
+            <input type="number" name="Temp" placeholder="Enter soil temperature" /><br />
+          </div>
+          <div>
+            <label for="">Humidity(%):</label><br />
+            <input type="number" name="Humidity" placeholder="Enter soil humidity level" /><br />
+          </div>
+          <div>
+            <label for="">Soil Moisture :</label><br />
+            <input type="number" name="moisture" placeholder="Enter soil moisture level" /><br />
+          </div>
+          <div>
+            <label for="">Field Area(hectare) :</label><br />
+            <input type="text" name="area" placeholder="Enter field area" /><br />
+          </div>
+          <div>
+            <label for="">Soil Depth(cm) :</label><br />
+            <input type="text" name="depth" placeholder="Enter soil depth" /><br />
+          </div>
+          <div>
+            <label for="">Soil Bulk Density(g/cm3) :</label><br />
+            <input type="text" name="bulk" placeholder="Enter soil density" /><br />
+          </div>
+          <div>
+            <label for="">Amount of Nitrogen(ppm):</label><br />
+            <input type="text" name="nitrogen" placeholder="Enter amount of nitrogen" /><br />
+          </div>
+          <div>
+            <label for="">Amount of Phosphorous(ppm):</label><br />
+            <input type="text" name="phosphorous" placeholder="Enter amount of phosphorous" /><br />
+          </div>
+          <div>
+            <label for="">Amount of Potassium(ppm):</label><br />
+            <input type="text" name="potassium" placeholder="Enter amount of potassium" /><br />
+          </div>
+          <div>
+            <label for="crop-type">Crop Name:</label><br />
+            <select id="crop-type" name="crop">
+              <option value="wheat">Wheat</option>
+              <option value="paddy">Paddy</option>
+              <option value="cotton">Cotton</option>
+              <option value="jute">Jute</option>
+              <option value="sugarcane">Sugarcane</option>
+              <option value="millet">Millets</option>
+              <option value="pulses">Pulses</option>
+            </select><br />
+          </div>
+        </div>
+        <div>
+          <button class="btn" type="submit">Predict</button>
+        </div>
+      </form>
+    </div>
+  </section>
+{% endblock %}

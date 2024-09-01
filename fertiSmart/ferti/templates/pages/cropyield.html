@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- crop yield prediction page by khushi -->
+<!-- this page take details about yield area ,type of crop ,temperature,humidity ,state from farmer and predict the yield based on information provided by farmer -->
+{% block Link %}
+  <link rel="stylesheet" href="{% static 'css/cropyield.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <div class="cy">
+    <!-- container which contain all div tag -->
+    <div class="crop-yield-details">
+      <!-- form for yield prediction -->
+      <form action="#" class="form">
+        <h3>Crop Yield Prediction</h3>
+        <h4>Yield Area:</h4>
+        <input name="area" type="number" class="Area" placeholder=" Enter Area(in hectare)" required />
+        <h4>Crop Type:</h4>
+        <!-- creating drop-down for crop type -->
+        <select class="crop-type">
+          <option value="1">Wheat</option>
+          <option value="2">Rice</option>
+          <option value="3">Cereals</option>
+          <option value="4">Jowar</option>
+          <option value="5">Bajra</option>
+          <option value="6">Maize</option>
+          <option value="7">Gram</option>
+          <option value="8">Others</option>
+        </select>
+        <h4>Temperature:</h4>
+        <input type="number" name="temp" placeholder=" Temperature (in celsius)" required />
+        <h4>Humidity:</h4>
+        <input type="number" name="humid" placeholder="Enter soil Humidity (in %)" required />
+        <h4>State:</h4>
+        <!-- creating drop-down for state -->
+        <select class="state">
+          <option>Andhra Pradesh</option>
+          <option>Arunachal Pradesh</option>
+          <option>Assam</option>
+          <option>Bihar</option>
+          <option>Chhattisgarh</option>
+          <option>Goa</option>
+          <option>Gujarat</option>
+          <option>Haryana</option>
+          <option>Himachal Pradesh</option>
+          <option>Jharkhand</option>
+          <option>Karnataka</option>
+          <option>Kerala</option>
+          <option>Madhya Pradesh</option>
+          <option>Maharashtra</option>
+          <option>Manipur</option>
+          <option>Meghalaya</option>
+          <option>Mizoram</option>
+          <option>Nagaland</option>
+          <option>Odisha</option>
+          <option>Punjab</option>
+          <option>Rajasthan</option>
+          <option>Sikkim</option>
+          <option>Tamil Nadu</option>
+          <option>Telangana</option>
+          <option>Tripura</option>
+          <option>Uttar Pradesh</option>
+          <option>Uttarakhand</option>
+          <option>West Bengal</option>
+        </select>
+      </form>
+      <button class="btn" type="submit">Predict</button>
+      <p class="res"></p>
+    </div>
+  </div>
+  <script>
+    // js logic of crop yield prediction
+    let arr = {
+      //creating object which store hec/kg of certain crops
+      1: 2577,
+      2: 1904,
+      3: 1039,
+      4: 850,
+      5: 779,
+      6: 1714,
+      7: 805,
+      8: 1000
+    }
+    let btn = document.querySelector('.btn')
+    let res = document.querySelector('.res')
+    btn.addEventListener('click', () => {
+      //adding eventlistner on predict button which display result when click the button
+      let yeild = document.querySelector('.Area').value
+      let crop = document.querySelector('.crop-type')
+      let cropvalue = crop.value
+      let hec = arr[cropvalue]
+      let predictedoutput = predictyeild(yeild, hec)
+      res.innerText = `Perdicted yield is ${predictedoutput} kg`
+    })
+    btn.addEventListener('mouseout', (event) => {
+      //adding eventlistner on btn when  mouse over other element other than btn
+      event.preventDefault()
+      let form = document.querySelector('.form')
+      form.reset()
+    })
+    btn.addEventListener('mouseout', () => {
+      res.innerText = ''
+    })
+    let predictyeild = (yeild, crop) => {
+      //function to predict yeild
+      let result = yeild * crop
+      return result
+    }
+  </script>
+{% endblock %}

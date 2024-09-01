@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+<!-- this is about page created by khushi -->
+<!-- this page contain all information about ferti smart and team members -->
+
+{% block Link %}
+  <link rel="stylesheet" href="{% static 'css/about.css' %} " />
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+{% endblock %}
+
+{% block content %}
+  <div class="container1">
+    <!-- creating div tag contains all content of page -->
+    <div class="part1" style="align-item:center;">
+      <!-- creating div tag contains all content of ferti smart -->
+      <h1 style="color:#f8c471">Ferti-Smart</h1>
+      <div class="about-ferti">
+        <h2 style="color:#f8c471">About Ferti-Smart</h2>
+        <div class="about-ferti-para">
+          <!-- para about ferti smart -->
+          <p class="para" style="#2c3e50">This ferti smart aims to address the pressing issue of soil degradation caused by excessive and improper fertilizer usage. By leveraging data-driven insights, the project develops a comprehensive solution that provides farmers with personalized fertilizer recommendations. Through analyzing soil health, crop type, and weather patterns, the application offers tailored suggestions for optimal fertilizer types and quantities. This approach promotes sustainable agricultural practices, enhances crop yield, and ultimately improves farmers' income. The solution empowers farmers to make informed decisions about fertilizer usage, contributing to a more resilient and productive agricultural ecosystem.FertiSmart's innovative solution offers farmers a valuable tool for sustainable agriculture. By providing tailored fertilizer recommendations, the application helps farmers optimize resource utilization, reduce costs, and improve the overall health and productivity of their land. Ultimately, FertiSmart contributes to a more sustainable and resilient agricultural ecosystem, ensuring a brighter future for farmers and consumers alike.</p>
+        </div>
+        <div style="align-item:center; margin-left:30%;">
+        <button class="btn" style="margin-bottom:20px; margin-left:15%;"> <a href="https://drive.google.com/file/d/1OYMqhluBws-je5hpz4BUkVBCQq_Hwdng/view?usp=sharing" style="color:green;">Video Intro </a>  </button><br><!-- creating button for read more -->
+        <a href="#">
+          <img src="https://i.ibb.co/KbPTYYQ/play-store.png" width="200px"></a>
+       <img src="https://i.ibb.co/hVM4X2p/app-store.png" width="200px"><br>
+       <button class="btn" style="margin-top:20px; margin-left:15%;"> <a href="https://drive.google.com/file/d/1tTTcHKh0HzYb1aL3SdaHXyWk80I_DLeM/view?usp=sharing" style="color:green;">Project PPT </a>  </button><br><!-- creating button for read more -->
+        </div>
+      </div>
+    </div>
+    <div class="part2">
+      <!-- team memeber -->
+
+      <h2>Our Team</h2>
+      <div class="box-container">
+        <div class="row1">
+          <!-- div tag contain other 3 boxes -->
+
+          <div class="card" style="width: 25rem;">
+            <!-- box1 -->
+            <img class="card-img-top" src="{% static 'assets/member1.jpg' %} " alt="Card image cap" height="220rem" />
+            <div class="card-body">
+              <h5 class="card-title">Abhishek Pathak</h5>
+              <h6>FrontEnd Developer</h6>
+              <p class="card-text">Contribution: Creator of soil anaylsis page and Fertilizer</p>
+              <a href="#" class="btn btn-primary">Know More</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 25rem;">
+            <!-- box 2 -->
+            <img class="card-img-top" src="{% static 'assets/member2.jpg' %} " alt="Card image cap" height="220rem" />
+            <div class="card-body">
+              <h5 class="card-title">Ayush Pal</h5>
+              <h6>BackEnd Developer/<br>Research Team</h6>
+              <p class="card-text">Contribution:Team leader, backend developer, code assembler, database handle, about page </p>
+              <a href="#" class="btn btn-primary">Know More</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 25rem;">
+            <!-- box3 -->
+            <img class="card-img-top" src="{% static 'assets/member3.jpg' %} " alt="Card image cap" height="220rem" />
+            <div class="card-body">
+              <h5 class="card-title">Ayush Jindal</h5>
+              <h6>Research Team</h6>
+              <p class="card-text">Contribution:Collection of website material, fertilizers data, images etc</p>
+              <a href="#" class="btn btn-primary">Know More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row1">
+          <!-- div tag contain first 3 boxes -->
+
+          <div class="card" style="width: 25rem;">
+            <!-- box4 -->
+            <img class="card-img-top" src="{% static 'assets/member4.png' %}" alt="Card image cap" height="220rem" />
+            <div class="card-body">
+              <h5 class="card-title">Awanish Yadav</h5>
+              <h6>BackEnd Developer</h6>
+              <p class="card-text">Contribution: Backend developer, code manager and code assembler</p>
+              <a href="#" class="btn btn-primary">Know More</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 25rem;">
+            <!-- box5 -->
+            <img class="card-img-top" src="{% static 'assets/member5.jpg' %}" alt="Card image cap" height="220rem" />
+            <div class="card-body">
+              <h5 class="card-title">Muklendra Pratap Rao</h5>
+              <h6>FrontEnd Developer</h6>
+              <p class="card-text">Contribution: Creator of Home and Sustainable Page</p>
+              <a href="#" class="btn btn-primary">Know More</a>
+            </div>
+          </div>
+
+          <div class="card" style="width: 25rem;">
+            <!-- box5 -->
+            <img class="card-img-top" src="{% static 'assets/member6.jpg' %}" alt="Card image cap" height="220rem" />
+            <div class="card-body">
+              <h5 class="card-title">Khushi Gupta</h5>
+              <h6>FrontEnd Developer</h6>
+              <p class="card-text">Contribution: Creator of Crop yield prediction page and About page</p>
+              <a href="#" class="btn btn-primary">Know More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
