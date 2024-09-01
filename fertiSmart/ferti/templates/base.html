@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FertiSmart</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    {% block Link %}
+    {% endblock %}
+  </head>
+  <body>
+    <!-- Navbar start -->
+    <nav class="header">
+      <div class="title">
+        <a href="#"><h1>Ferti-Smart</h1></a>
+      </div>
+
+      <div class="icon" id="icon">
+        <span class="line" id="linefirst"></span>
+        <span class="line" id="linesecond"></span>
+        <span class="line" id="linethird"></span>
+      </div>
+
+      <div class="header-right" id="header-right">
+        <a class="text" href="{% url 'home' %}">Home</a>
+        <a class="text" href="{% url 'soilAnalysis' %}">Soil Analysis</a>
+        <a class="text" href="{% url 'cropYield' %}">Crop-Yield Prediction</a>
+        <a class="text" href="{% url 'sustainability' %}">Sustainability</a>
+        <a class="text" href="{% url 'about' %}">About</a>
+      </div>
+    </nav>
+  
+    <!-- Navbar Ends -->
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer start -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-links">
+          <div class="footer-column">
+            <img src="{% static 'assets/pngegg.png' %}" alt="Logo" class="footer-logo-img" />
+          </div>
+          <div class="footer-column">
+            <h3>Ministry</h3>
+            <ul>
+              <li>
+                <a href="#">Agriculture</a>
+              </li>
+              <li>
+                <a href="#">Food</a>
+              </li>
+              <li>
+                <a href="#">Rural Development</a>
+              </li>
+              <li>
+                <a href="#">Home Ministry</a>
+              </li>
+              <li>
+                <a href="#">Education</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>About us</h3>
+            <ul>
+              <li>
+                <a href="#">Smart India Hackthon</a>
+              </li>
+              <li>
+                <a href="#">University of Lucknow</a>
+              </li>
+              <li>
+                <a href="#">Central Government</a>
+              </li>
+              <li>
+                <a href="#">State Government</a>
+              </li>
+              <li>
+                <a href="#">Niti Ayog</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Terms & Condition</h3>
+            <ul>
+              <li>
+                <a href="#">Website Policy</a>
+              </li>
+              <li>
+                <a href="#">Help</a>
+              </li>
+              <li>
+                <a href="#">Feedback</a>
+              </li>
+              <li>
+                <a href="#">Order & Notices</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Quick links</h3>
+            <ul>
+              <li>
+                <a href="#">Weather</a>
+              </li>
+              <li>
+                <a href="#">Crop Names</a>
+              </li>
+              <li>
+                <a href="#">Visitors</a>
+              </li>
+              <li>
+                <a href="#">Contact us</a>
+              </li>
+              <li>
+                <a href="#">FAQs</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>&copy; 2024 FertiSmart. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Footer end -->
+
+    <script>
+      const icon = document.getElementById('icon')
+      const headerRight = document.getElementById('header-right')
+      var Rotate_1 = document.getElementById('linefirst')
+      var Rotate_2 = document.getElementById('linesecond')
+      var Rotate_3 = document.getElementById('linethird')
+      
+      icon.addEventListener('click', () => {
+        headerRight.classList.toggle('active')
+        Rotate_1.classList.toggle('rotate')
+        Rotate_2.classList.toggle('rotate-2')
+        Rotate_3.classList.toggle('rotate-3')
+      })
+    </script>
+  </body>
+</html>
